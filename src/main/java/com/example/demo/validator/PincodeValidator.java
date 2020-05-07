@@ -19,7 +19,7 @@ public class PincodeValidator implements ConstraintValidator<Pincode, Integer> {
     public boolean isValid(Integer pincode, ConstraintValidatorContext context) {
         if (!pincodes.contains(pincode)) {
             context.disableDefaultConstraintViolation();
-            context.buildConstraintViolationWithTemplate("Invalid pincode");
+            context.buildConstraintViolationWithTemplate("Invalid Pincode");
             return false;
         }
         return true;

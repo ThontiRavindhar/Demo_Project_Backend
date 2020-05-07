@@ -20,4 +20,8 @@ public class CustomerService {
     public List<Integer> getPincodes() {
         return null;
     }
+
+    public List<String> getStates() {
+        return null;
+    }
 }

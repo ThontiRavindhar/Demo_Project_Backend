@@ -25,7 +25,6 @@ public class CustomerController {
         return null;
     }
 
-
     @PostMapping("/createCustomer")
     String createCustomer(@Valid @RequestBody Customer customer) {
         return null;

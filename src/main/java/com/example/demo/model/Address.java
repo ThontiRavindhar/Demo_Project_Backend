@@ -5,20 +5,23 @@ import com.example.demo.annotation.State;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 public class Address {
 
     @Id
     private int id;
+    @NotEmpty(message = "Please provide address")
     private String address;
+    @NotEmpty(message = "Please provide city")
     private String city;
     @State
+    @NotEmpty(message = "Please provide State")
     private String state;
     @Pincode
+    @NotEmpty(message = "Please provide Pincode")
     private int pincode;
-
-    public Address() {}
 
     public Address(int id, String address, String city, String state, int pincode) {
         this.id = id;
@@ -67,4 +70,5 @@ public class Address {
     public void setpincode(int pincode) {
         this.pincode = pincode;
     }
+
 }

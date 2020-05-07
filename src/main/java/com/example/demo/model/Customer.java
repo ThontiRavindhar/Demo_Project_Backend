@@ -1,24 +1,21 @@
 package com.example.demo.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
 
 @Entity
+@Table(name = "CUSTOMERS")
 public class Customer {
 
     @Id
+    @Column( name = "Customer_Id" )
     private int id;
-    @NotEmpty(message = "Please provide customer name")
+    @Column( name = "Customer_Name" )
+    @NotEmpty( message = "Please provide customer name" )
     private String name;
-    private Address address;
-
-    public Customer(int id, @NotEmpty( message = "Please provide customer name" ) String name, Address address) {
-        this.id = id;
-        this.name = name;
-        this.address = address;
-    }
 
     public int getId() {
         return id;
@@ -36,11 +33,9 @@ public class Customer {
         this.name = name;
     }
 
-    public Address getAddress() {
-        return address;
+    @Override
+    public String toString() {
+        return "Customer Entity Id: " + id + ", name: " + name;
     }
 
-    public void setAddress(Address address) {
-        this.address = address;
-    }
 }
